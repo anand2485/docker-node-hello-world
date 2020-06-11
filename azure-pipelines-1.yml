@@ -28,7 +28,7 @@ stages:
         WebAppName: 'anand-webapp'
         DockerNamespace: 'anand2485'
         DockerRepository: 'pipeline-test'
-        DockerImageTag: 'latest'
+        DockerImageTag: $(Build.BuildNumber)
 
 
 

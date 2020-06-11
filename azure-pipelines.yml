@@ -17,7 +17,7 @@ stages:
     - task: Docker@2
       inputs:
         containerRegistry: 'AnandDockerHub'
-        repository: 'anand2485'
+        repository: 'anand2485/node-hello-world'
         command: 'buildAndPush'
         Dockerfile: '**/Dockerfile'
 

@@ -16,6 +16,19 @@ stages:
         repository: 'anand2485/pipeline-test'
         command: 'buildAndPush'
         Dockerfile: '**/Dockerfile'
+- stage: DevDeploy
+  jobs:
+  - job: DevDeploy
+    steps:
+    - task: AzureRmWebAppDeployment@4
+      inputs:
+        ConnectionType: 'AzureRM'
+        azureSubscription: 'Free Trial (effb1dbc-25e0-4cce-878b-b2c2707372cb)'
+        appType: 'webAppContainer'
+        WebAppName: 'anand-webapp'
+        DockerNamespace: 'anand2485'
+        DockerRepository: 'pipeline-test'
+        DockerImageTag: 'latest'
 
 
 
